@@ -21,6 +21,7 @@
         <th scope="col">Item</th>
         <th scope="col">Jumlah</th>
         <th scope="col">Harga</th>
+        <th scope="col">Subtotal</th>
         <th scope="col">Aksi</th>
       </tr>
     </thead>
@@ -44,7 +45,7 @@
                "<td>" + data.item + "</td>" +
                "<td>" + data.jumlah + "</td>" +
                "<td>" + data.harga + "</td>" +
-               
+               "<td>" + (data.jumlah * data.harga) + "</td>" + 
                "<td>" + "<a href='#' class='me-2 link-ubah' data='" + data.id + "'>ubah</a><button class='btn btn-danger tombol-hapus' data='" +data.id + "'>hapus</button> "  + "</td>" +
               "</tr>"
               )
