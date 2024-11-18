@@ -44,7 +44,7 @@
       const queryString = window.location.search
       const parameterURL = new URLSearchParams(queryString)
       const id = parameterURL.get('id')
-      const inven = await ambilInventory(id)
+      const inventory = await ambilInventory(id)
       
       $("#inputitem").val(inventory.item)
       $("#inputjumlah").val(inventory.jumlah)
@@ -54,12 +54,12 @@
       $("#tombolsimpan").click(async function(event) {
         event.preventDefault()
         
-      let item = $("#inputnama").val()
+      let item = $("#inputitem").val()
       let jumlah = $("#inputjumlah").val()
       let harga = $("#inputharga").val()
       
         
-      // simpan data buah yang baru
+      // simpan data inventory yang baru
       await ubahInventory(id, item, jumlah, harga)
         window.location.href ="index.html"
       })

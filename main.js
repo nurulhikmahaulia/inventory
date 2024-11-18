@@ -66,3 +66,17 @@ export async function tambahInventory(item, jumlah, harga) {
 export async function hapusInventory(id) {
   await deleteDoc(doc(basisdata, "inventory", id))
 }
+
+export async function ubahInventory(id, itembaru, jumlahbaru, hargabaru) {
+  await updateDoc(
+    doc(basisdata, "inventory", id),
+    { item: itembaru, jumlah: jumlahbaru, harga: hargabaru }
+    )
+}
+
+export async function ambilInventory(id) {
+  const refDokumen = await doc(basisdata, "inventory", id)
+  const snapshotDokumen = await getDoc(refDokumen)
+  
+  return await snapshotDokumen.data()
+}
